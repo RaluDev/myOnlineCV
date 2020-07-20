@@ -28,3 +28,34 @@ function linkAction() {
 }
 navLink.forEach(link => link.addEventListener('click', linkAction));
 
+
+// Scroll animation
+const scroll = ScrollReveal({
+    origin: 'top',
+    distance: '80px',
+    duration: 2000,
+    reset: true
+});
+
+// Home
+scroll.reveal('.home__title',{});
+scroll.reveal('.button',{delay: 200});
+scroll.reveal('.home__img',{delay: 400});
+scroll.reveal('.home__social-icon',{interval: 200});
+
+// About
+scroll.reveal('.about__img',{});
+scroll.reveal('.about__subtitle',{delay: 400});
+scroll.reveal('.about__text',{delay: 400});
+
+// Skills
+scroll.reveal('.skills__subtitle',{}); 
+scroll.reveal('.skills__text',{}); 
+scroll.reveal('.skills__data',{interval: 200}); 
+scroll.reveal('.skills__img',{delay: 600});
+
+// Projects
+scroll.reveal('.work__img',{interval: 200}); 
+
+// Contact
+scroll.reveal('.contact__input',{interval: 200}); 
