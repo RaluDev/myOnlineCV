@@ -346,6 +346,7 @@ img {
 }
 
 .work__img img {
+    height: 200px;
     transition: 1s;
     cursor: pointer;
 }
@@ -355,6 +356,7 @@ img {
 }
 
 /* Contact form */
+
 .contact__input {
     width: 100%;
     font-size: var(--normal-font-size);
