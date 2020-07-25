@@ -368,6 +368,10 @@ img {
     margin-bottom: var(--mb-4);
 }
 
+textarea {
+    resize: none;
+}
+
 .contact__button {
     display: block;
     border: none;
