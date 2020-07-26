@@ -241,7 +241,7 @@ img {
 }
 .button {
     display: inline-block;
-    background-color: var(--first-color);
+    background-color: var(--second-color);
     color: #fff;
     padding: .75rem 2.5rem;
     font-weight: var(--font-semi);
@@ -258,6 +258,9 @@ img {
     text-align: center;
 }
 
+.about__text {
+    text-align: justify;
+}
 .about__subtitle {
     margin-bottom: var(--mb-2);
 }
@@ -285,6 +288,7 @@ img {
 
 .skills__text {
     margin-bottom: var(--mb-4);
+    text-align: justify;
 }
 
 .skills__data {
@@ -362,7 +366,7 @@ img {
     font-size: var(--normal-font-size);
     font-weight: var(--font-semi);
     padding: 1rem;
-    border-radius: .5rem;
+    border-radius: .3rem;
     border: 1.5px solid var(--second-color);
     outline: none;
     margin-bottom: var(--mb-4);
@@ -491,7 +495,7 @@ textarea {
         column-gap: 2rem;
     }
 
-    .contact__form {
+     .contact__form {
         width: 360px;
     }
 
