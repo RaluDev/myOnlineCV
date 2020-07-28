@@ -63,8 +63,6 @@ scroll.reveal('.contact__input',{interval: 200});
 
 // Validation
 
-const form = document.getElementById('form');
-
 const name = document.getElementById('firstName');
 const email = document.getElementById('email');
 const message = document.getElementById('message');

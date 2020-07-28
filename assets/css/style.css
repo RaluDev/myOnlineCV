@@ -539,6 +539,15 @@ textarea {
     .contact__container {
         justify-items: center;
     }
+
+    #email, #firstName {
+        margin-bottom: 20px;
+    }
+
+    #message {
+        margin-bottom: 20px; 
+    }
+
 }
 
 @media screen and (min-width: 1024px){
