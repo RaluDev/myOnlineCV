@@ -59,3 +59,74 @@ scroll.reveal('.work__img',{interval: 200});
 
 // Contact
 scroll.reveal('.contact__input',{interval: 200}); 
+
+
+// Validation
+
+const form = document.getElementById('form');
+
+const name = document.getElementById('firstName');
+const email = document.getElementById('email');
+const message = document.getElementById('message');
+const button = document.getElementById('button');
+
+button.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    checkInputs();
+});
+
+function checkInputs() {
+    //get the values from the inputs
+    const nameValue = name.value
+    const emailValue = email.value
+    const messageValue = message.value
+
+    if (nameValue === "") {
+        //show error / add error class
+        setErrorFor(name, 'Name cannot be blank');
+    } else {
+        //add success class
+        setSuccessFor(name);
+    }
+
+    if (emailValue === "") {
+        //show error / add error class
+        setErrorFor(email, 'Email cannot be blank');
+    } else if (!isEmail(emailValue)) {
+        setErrorFor(email, 'Email is not valid');
+    } else {
+        setSuccessFor(email);
+    }
+
+
+    if (messageValue === "") {
+        //show error / add error class
+        setErrorFor(message, 'Message cannot be blank');
+    } else {
+        //add success class
+        setSuccessFor(message);
+    }
+}
+
+function setErrorFor(input, message) {
+    const formControl = input.parentElement;
+    const small = formControl.querySelector('small');
+
+    //add error msg inside small
+    small.innerText = message;
+
+    //add error class
+    formControl.className = 'form-control error';
+}
+
+function setSuccessFor(input) {
+    const formControl = input.parentElement;
+    formControl.className = 'form-control success';
+}
+
+
+function isEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+}

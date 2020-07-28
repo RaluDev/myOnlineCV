@@ -338,7 +338,7 @@ img {
     border-radius: .5rem;
 }
 
-/* projects */
+/* Projects */
 .work__container {
     row-gap: 2rem;
 }
@@ -360,6 +360,42 @@ img {
 }
 
 /* Contact form */
+
+/* validation */
+.form-control {
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control small {
+    position: absolute;
+    bottom: 0;
+    left:0;
+    visibility: hidden;
+}
+
+.form-control.success input {
+    border-color: green;
+}
+
+.form-control.success textarea {
+    border-color: green;
+}
+
+.form-control.error textarea {
+    border-color: salmon;
+}
+
+.form-control.error input {
+    border-color: salmon;
+}
+
+.form-control.error small {
+    visibility: visible;
+    color: salmon;
+}
+/* -------------------------------------- */
 
 .contact__input {
     width: 100%;
@@ -384,6 +420,7 @@ textarea {
     cursor: pointer;
     margin-left: auto;
 }
+
 
 /* Footer */
 .footer {
