@@ -22,7 +22,7 @@ function linkAction() {
     this.classList.add('active');
     //console.log(this);
 
-    //remove menu on click
+    //remove mobile menu on click
     const navMenu = document.getElementById('nav-menu')
     navMenu.classList.remove('show')
 }
@@ -61,24 +61,26 @@ scroll.reveal('.work__img',{interval: 200});
 scroll.reveal('.contact__input',{interval: 200}); 
 
 
+
+
 // Validation
 
-const name = document.getElementById('firstName');
-const email = document.getElementById('email');
-const message = document.getElementById('message');
-const button = document.getElementById('button');
-
-button.addEventListener('click', (event) => {
+document.getElementById('button').addEventListener('click', (event) => {
     event.preventDefault();
 
     checkInputs();
 });
 
 function checkInputs() {
+    const name = document.getElementById('firstName');
+    const email = document.getElementById('email');
+    const message = document.getElementById('message');
+
+
     //get the values from the inputs
-    const nameValue = name.value
-    const emailValue = email.value
-    const messageValue = message.value
+    const nameValue = name.value.trim();
+    const emailValue = email.value.trim();
+    const messageValue = message.value.trim();
 
     if (nameValue === "") {
         //show error / add error class
