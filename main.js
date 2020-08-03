@@ -130,3 +130,78 @@ function isEmail(email) {
     const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
 }
+
+
+
+// Language switch
+
+const langEl = document.querySelector('.langWrap');
+const link = document.querySelectorAll('.langWrap a');
+// About section
+const titleEl = document.querySelector('.about__subtitle');
+const descrEl = document.querySelector('.about__text');
+const sectionTitle = document.querySelector('.section-title');
+// Skills section
+const skillsTitle = document.querySelector('#skills h2');
+const skillsSub = document.querySelector('.skills__subtitle');
+const skillsDescr = document.querySelector('.skills__text');
+// Projects
+const projectsTitle = document.querySelector('#work h2');
+// Title heading
+const firstP = document.querySelector('div.home__data p.first');
+const secondP = document.querySelector('div.home__data p.second');
+const thirdP = document.querySelector('div.home__data p.third');
+//Button
+const headingLink = document.querySelector('#home div.home__data a');
+// Nav
+const links = document.querySelectorAll('#nav-menu li .nav__link');
+// Contact btn
+
+
+
+link.forEach(el => {
+    el.addEventListener('click', () => {
+        langEl.querySelector('.active').classList.remove('active');
+        el.classList.add('active');
+
+        // returns value of lang attribute
+        const attr = el.getAttribute('language');
+
+        // Change content for each element
+
+        // About
+        titleEl.textContent = data[attr].title;
+        descrEl.textContent = data[attr].description;
+        sectionTitle.textContent = data[attr].section;
+
+        // Skills
+        skillsTitle.textContent = data[attr].sectionSkills;
+        skillsSub.textContent = data[attr].titleSkills;
+        skillsDescr.textContent = data[attr].skillsDescription;
+        projectsTitle.textContent = data[attr].titleProjects;
+
+        // Title heading
+        console.log(links);
+        // console.log(secondP.textContent);
+        // console.log(headingLink.textContent);
+
+        firstP.textContent = data[attr].firstHeading;
+        secondP.textContent = data[attr].secondHeading;
+        thirdP.textContent = data[attr].thirdHeading;
+
+        headingLink.textContent = data[attr].linkHeading;
+
+        // contact btn
+        
+        
+        //Nav
+        // Array.from(links);
+        // console.log(links[0].textContent);
+        const array = Array.from(links);
+        console.log(links[0].textContent);
+        links[0].textContent = data[attr].homeLink;
+        links[1].textContent = data[attr].aboutLink;
+        links[2].textContent = data[attr].skillsLink;
+        links[3].textContent = data[attr].projectsLink;
+    });
+});

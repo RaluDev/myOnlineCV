@@ -54,6 +54,29 @@
     box-shadow: 0 10px 36px rgba(0, 0, 0, .15);
 }
 
+
+/* language */
+.langWrap{
+    /* background: #333; */
+    width: 150px;
+    color: var(--second-color);
+  }
+  .langWrap a{
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    padding: 0 15px;
+    font-weight: bold;
+    background: var(--second-color);
+    font-size: 10px;
+  }
+  .langWrap a.active{
+    background: var(--first-color);
+  }
+
+
+  
+
 /* About */
 .about__container {
     row-gap: 2rem;
