@@ -107,6 +107,12 @@ function checkInputs() {
         //add success class
         setSuccessFor(message);
     }
+
+    if (nameValue !== "" && emailValue !== "" && messageValue !== "" && isEmail(emailValue)) {
+        sendEmail();
+    } else {
+        console.log('Unable to send Email');
+    }
 }
 
 function setErrorFor(input, message) {
@@ -155,7 +161,6 @@ const thirdP = document.querySelector('div.home__data p.third');
 const headingLink = document.querySelector('#home div.home__data a');
 // Nav
 const links = document.querySelectorAll('#nav-menu li .nav__link');
-// Contact btn
 
 
 
@@ -190,10 +195,7 @@ link.forEach(el => {
         thirdP.textContent = data[attr].thirdHeading;
 
         headingLink.textContent = data[attr].linkHeading;
-
-        // contact btn
-        
-        
+  
         //Nav
         // Array.from(links);
         // console.log(links[0].textContent);
@@ -205,3 +207,33 @@ link.forEach(el => {
         links[3].textContent = data[attr].projectsLink;
     });
 });
+
+
+//Email
+function sendEmail() {
+    (function () {
+        emailjs.init("user_Gq3fjDedBoSrfXICaXHZz");
+    })();
+
+
+    //set the parameter as per template param [https://dashboard.emailjs.com/templates]
+    let name = document.querySelector('#firstName').value;
+    let from = document.querySelector('#email').value;
+    let message = document.querySelector('#message').value;
+
+    // insert dinamic values from my form
+    var templateParams = {
+        to_name: name,
+        from_name: from,
+        message_html: message,
+        person_name: name
+    };
+
+    // send request
+    emailjs.send('gmail', 'template_ksOeU31r', templateParams)
+        .then(function (response) {
+            console.log('SUCCESS!', response.status, response.text);
+        }, function (error) {
+            console.log('FAILED :(', error);
+        });
+}
